@@ -1,0 +1,195 @@
+.login {
+  background-image: url('../../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+body{
+  color: black;
+}
+form {
+  font-family: var(--font-family-primary);
+  width: 100%;
+  background-color: white;
+  color: black;
+  margin: auto;
+}
+
+form p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-family: var(--font-family-primary);
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.bg-image {
+  background-image: url('../../img/Login\ PReS1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.card {
+  border-radius: 20px;
+  margin-left: 15%;
+  margin-right: 15%;
+  ;
+}
+
+.center-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Styling for the login box */
+.login-box {
+  width: 400px;
+  background-color: #1e4469;
+
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image style */
+.login-image {
+  width: 50%;
+}
+
+
+.form-control {
+  padding-top: 2px;
+  border-radius: 20px;
+  border-color: var(--color-primary);
+color: var(--color-black);
+}
+.form-control:focus {
+  color: var(--color-black);
+  border-color: var(--color-secondary); 
+  box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25)
+}
+.signUp{
+  color: var(--color-primary);
+}
+.signUp:hover{
+  color: var(--color-secondary);
+}
+.rounded-input {
+  border-radius: 15px;
+  border-color: var(--color-primary)
+}
+
+.btn-success {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-radius: 15px;
+  color:var(--color-white)
+}
+
+.btn-success:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  border-radius: 15px;
+  color: var(--color-white);
+}
+
+.btn-success.active {
+  background-color: white;
+  border-color: var(--color-secondary);
+  border-radius: 15px;
+}
+.btn:first-child:active{
+  background-color: var(--color-primary);
+  border-color: var(--color-secondary);
+  border-radius: 15px;
+  color: white;
+}
+.btn-outline-success {
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 15px;
+}
+
+.btn-outline-success:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white);
+  border-radius: 15px;
+}
+
+.googleSign2 {
+  padding-left: .3rem;
+}
+
+
+.error-box {
+  background-color: #f4d6d2;
+  border-color: #f0c5c1;
+  color: #691911;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 10px;
+}
+
+.error-box p {
+  margin: 0;
+}
+.login-image {
+  text-align: center; /* Align image to center */
+  padding-top: 10px; /* Adjust top padding as needed */
+  display: none;
+}
+
+.login-image img {
+  width: 200px; /* Set the width of the image */
+  height: auto; /* Maintain aspect ratio */
+}
+.form-control:focus {
+  border-color: var(--color-secondary); 
+  box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25)
+}
+
+@media (max-width: 575.98px)  {
+  .googleSign{
+  font-size: small;
+
+  }
+  .login-image {
+    display: inline;
+  }
+}
+
+@media(min-width: 576px) and (max-width: 767.98px){ 
+  .googleSign{
+    font-size: small;
+  }
+  
+
+ }
+
+
+@media(min-width: 768px) and (max-width: 991.98px){ 
+.googleSign{
+  font-size: medium;
+}
+
+}
+
+@media (min-width: 992px) and (max-width: 1920.98px){ 
+
+
+ }

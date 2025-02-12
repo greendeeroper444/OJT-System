@@ -1,0 +1,23 @@
+body{
+  font-family: var(--font-family-primary);
+
+}
+
+.bg-light{
+    background-color: var(--color-primary) !important;
+}
+.margin2 {
+  margin-left: 4rem;
+}
+.profile{
+  color: var(--color-white);
+  margin-right: 4rem;
+}
+
+.dropdown-item{
+  color: var(--color-primary);
+}
+.dropdown-item:hover{
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}

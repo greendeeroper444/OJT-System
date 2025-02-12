@@ -1,0 +1,197 @@
+.login {
+    background-image: url('../../img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #f8f9fa; /* Match this color with your background image or use any desired color */
+    background-attachment: fixed; /* This will keep the background fixed while scrolling */
+    height: 100vh; /* Ensure the background covers the entire viewport */
+    position: relative; /* Ensure z-index works properly */
+    z-index: 0; /* Set a default z-index */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+   }
+  
+  form {
+    font-family: var(--font-family-primary);
+    width: 100%; 
+
+    background-color: white;
+    margin: auto;
+  }
+  
+  form p {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  h2 {
+    font-family: var(--font-family-primary);
+    font-weight: bold;
+    color: var(--color-primary);
+  }
+  
+  .bg-image {
+    background-image: url('../../img/Login\ PReS1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+  }
+  
+  .card {
+    border-radius: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+    ;
+  }
+  
+  .center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Styling for the login box */
+  .login-box {
+    width: 400px;
+    background-color: #1e4469;
+  
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .signUp{
+    color: var(--color-primary);
+  }
+  .signUp:hover{
+    color: var(--color-secondary);
+  }
+  .btn-success.active {
+    background-color: white;
+    border-color: var(--color-secondary);
+    border-radius: 15px;
+  }
+  .btn:first-child:active{
+    background-color: var(--color-primary);
+    border-color: var(--color-secondary);
+    border-radius: 15px;
+    color: white;
+  }
+  .form-control {
+    padding-top: 2px;
+    border-radius: 20px;
+    border-color: var(--color-primary);
+  }
+  .form-select{
+    padding-top: 2px;
+    border-radius: 20px;
+    border-color: var(--color-primary);
+  }
+  .rounded-input {
+    border-radius: 15px;
+    border-color: var(--color-primary)
+  }
+  
+  .btn-success {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: 15px;
+    color: var(--color-white);
+  }
+  
+  .btn-success:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    border-radius: 15px;
+    color: var(--color-white);
+
+  }
+  
+  .btn-success.active {
+    background-color: white;
+    border-color: var(--color-secondary);
+    border-radius: 15px;
+  }
+  
+  .btn-outline-success {
+    background-color: var(--color-white);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 15px;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-white);
+    border-radius: 15px;
+  }
+  .form-control{
+    color: black;
+  }
+  .form-control:focus {
+    color: black;
+    border-color: var(--color-secondary); 
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25)
+  }
+  .form-select:focus {
+    border-color: var(--color-secondary); 
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25)
+  }
+  .googleSign {
+    padding-left: .3rem;
+  }
+  
+  .rounded-input-error{
+    color: var(--color-red);
+    border-color: var(--color-red);
+  }
+
+  .error-box {
+    background-color: #f4d6d2;
+    border-color: #f0c5c1;
+    color: #691911;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .error-box p {
+    margin: 0;
+  }
+  .login-image {
+    text-align: center; /* Align image to center */
+    padding-top: 10px; /* Adjust top padding as needed */
+}
+
+.login-image img {
+    width: 200px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+}
+  
+@media (max-width: 575.98px)  {
+   
+}
+
+@media(min-width: 576px) and (max-width: 767.98px){ 
+
+
+ }
+
+
+@media(min-width: 768px) and (max-width: 991.98px){ 
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1920.98px){ 
+
+
+ }

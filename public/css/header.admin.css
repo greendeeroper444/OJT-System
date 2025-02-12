@@ -1,0 +1,34 @@
+ .nav-item, .nav-item:active, .nav-item .nav-link:focus, .nav-item:hover{
+  color: var(--color-primary)
+  
+}
+
+.nav-item .nav-item:hover{
+  color: var(--color-primary);
+}
+
+.page-link {
+  color: var(--color-primary);
+}
+
+.page-link:hover {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
+
+a:active {
+  color: var(--color-primary);
+}
+.sidebar #sidebarToggle{
+  color:var(--color-white
+  )
+}
+
+.dropdown-item{
+  color: var(--color-primary);
+}
+.dropdown-item:hover{
+  /* color: var(--color-white); */
+  background-color: #cbcaca;
+  color: var(--color-secondary);
+}

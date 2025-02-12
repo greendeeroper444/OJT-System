@@ -1,0 +1,232 @@
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--color-grey);
+
+}
+
+.cust-margin {
+  margin: 2rem 10rem auto 10rem;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.custom-dropdown {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.custom-dropdown .dropdown-menu {
+  border: none;
+  border-top: 1px solid #ced4da;
+}
+
+
+.btn-outline-success {
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  border-radius: .5rem;
+}
+
+.btn-outline-success:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white);
+  border-radius: .5rem;
+}
+
+.btn-success {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-radius: .5rem;
+  color: var(--color-white);
+}
+
+.btn-success:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  border-radius: .5rem;
+
+}
+
+.btn-success:hover {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  border-radius: .5rem;
+  color: var(--color-white);
+}
+
+.btn:first-child:active{
+  background-color: var(--color-primary);
+  border-color: var(--color-secondary);
+  border-radius: .5rem;
+  color: white;
+}
+
+table {
+  border-radius: .5rem;
+  width: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+table.custom-table thead th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+}
+
+table.custom-table tfoot th {
+
+  color: var(--color-primary);
+}
+
+.status-btn-approved {
+  font-weight: bold;
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  border-radius: 1px;
+  margin-bottom: 0px;
+  border-radius: 1rem;
+}
+.form-control:focus {
+  border-color: var(--color-secondary); 
+  /* color: black; */
+  box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25)
+}
+.green{
+  color: var(--color-primary);
+}
+.yellow{
+  color: var(--color-yellow);
+}
+.card{
+  border-radius: .5rem;
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+  text-decoration: none;
+
+}
+.card-header{
+  background-color: var(--color-primary);
+  color: var(--color-white);
+padding: 1rem 0rem;
+}
+.event{
+  background-color: var(--color-blue);
+}
+.pending{
+  background-color: var(--color-yellow);
+}
+.users{
+  background-color: var(--color-darkgrey);
+}
+.approved{
+  background-color: var(--color-secondary);
+}
+a{
+  text-decoration: none;
+}
+.card-body{
+  color: black;
+
+}
+.card-title{
+  margin: 0px;
+  font-size: 1rem;
+}
+.title-page{
+  color: var(--color-primary);
+  font-weight: bold;
+}
+.btn-check:checked+.btn, :not(.btn-check)+.btn:active, .btn:first-child:active, .btn.active, .btn.show{
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.footer-margin {
+  margin: 1rem 4rem 1rem 4rem;
+}
+
+
+.page-link {
+  color: var(--color-primary);
+}
+
+.page-link:hover {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
+
+.page-link:active {
+  color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+.page-item.active .page-link {
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+table.custom-table tbody tr td a {
+  text-decoration: none;
+}
+
+select.form-select option:hover {
+  background-color: #4CAF50; /* Change the background color of the hovered option */
+  color: #000000; /* Change the text color of the hovered option */
+}
+.page-item.active .page-link{   
+   z-index: 3;
+  color: #fff;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);}
+@media (max-width: 575.98px) {
+  .cust-margin {
+    margin: 2rem 2rem auto 2rem;
+  }
+
+  .font-weight-bold {
+    font-size: 7vw;
+  }
+
+  body {
+    font-size: 12px;
+  }
+}
+
+@media(min-width: 576px) and (max-width: 767.98px) {
+  .cust-margin {
+    margin: 2rem 4rem auto 4rem;
+
+  }
+}
+
+
+@media(min-width: 768px) and (max-width: 991.98px) {
+  .cust-margin {
+    margin: 2rem 6rem auto 6rem;
+
+  }
+
+  .tablet {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1920.98px) {
+  .cust-margin {
+    margin: 2rem 8rem auto 8rem;
+
+  }
+}
+
+@media(max-width: 768px) and (max-width: 991.98px) {
+
+  .tablet {
+    flex-direction: column;
+  }
+}

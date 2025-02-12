@@ -1,0 +1,125 @@
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--color-grey);
+  
+  }
+  
+  .card{
+    border-radius: .5rem;
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    text-decoration: none;
+  
+  }
+  .card-header{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  .card-title{
+    margin: 0px;
+    font-size: 1rem;
+  }
+  .nav-link{
+    color: var(--color-white);
+  }
+  
+  .topbar.navbar-light .navbar-nav .nav-item .nav-link{
+    color: var(--color-white);
+  }
+  .topbar.navbar-light .navbar-nav .nav-item .nav-link:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    /* font-weight: bold; */
+    background-color: var(--color-primary);
+  }
+.nav-link:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--color-secondary);
+  }
+  .nav-tabs .nav-link.active{
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-weight: bold;
+  }
+  .btn-success {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: .5rem;
+    color: var(--color-white);
+  
+  }
+  .content {
+    margin: 2rem 10rem auto 10rem;
+  }
+  
+  .btn-check:checked+.btn, :not(.btn-check)+.btn:active, .btn:first-child:active, .btn.active, .btn.show{
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
+  .dropdown-item, .dropdown-item {
+    color: var(--color-primary);
+  }
+  .dropdown-item.active, .dropdown-item:active{
+    background-color: var(--color-secondary);
+  color: var(--color-white);
+  }
+  .dropdown-item:hover{
+    /* color: var(--color-white); */
+    background-color: #dad9d9;
+    color: var(--color-secondary);
+  }
+  .btn-success:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-white);
+    cursor: pointer;
+  }
+  @media (max-width: 575.98px) {
+    .cust-margin {
+      margin: 2rem 2rem auto 2rem;
+    }
+  
+    .font-weight-bold {
+      font-size: 7vw;
+    }
+  
+    body {
+      font-size: 12px;
+    }
+  }
+  
+  @media(min-width: 576px) and (max-width: 767.98px) {
+    .cust-margin {
+      margin: 2rem 4rem auto 4rem;
+  
+    }
+  }
+  
+  
+  @media(min-width: 768px) and (max-width: 991.98px) {
+    .cust-margin {
+      margin: 2rem 6rem auto 6rem;
+  
+    }
+  
+    .tablet {
+      flex-direction: column;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1920.98px) {
+    .cust-margin {
+      margin: 2rem 8rem auto 8rem;
+  
+    }
+  }
+  
+  @media(max-width: 768px) and (max-width: 991.98px) {
+  
+    .tablet {
+      flex-direction: column;
+    }
+  }

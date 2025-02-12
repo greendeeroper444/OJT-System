@@ -1,0 +1,164 @@
+<nav class="navbar navbar-expand shadow mb-4 topbar static-top navbar-light sticky-top" style="background: #0b790b;">
+    <div class="container-fluid">
+        <input id="notifdataURL" value="<?php echo PARENT_FOLDER ?>/notification" type="text" hidden>
+        <div class="d-flex justify-content-center align-items-center sidebar-brand m-0">
+            <div class="sidebar-brand-text mx-3"><img src="<?php echo PARENT_FOLDER ?>/public/img/pres%20header.png" style="height: 42px;">
+            </div>
+            <ul class="navbar-nav flex-nowrap ms-auto">
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <div class="nav-item dropdown no-arrow"><a class="nav-link navdash" aria-current="page" href="<?php echo PARENT_FOLDER ?>/client/dashboard">My Request</a>
+                    </div>
+                </li>
+                <div class="d-none d-sm-block topbar-divider"></div>
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <div class="nav-item dropdown no-arrow"><a class="nav-link navdash" href="<?php echo PARENT_FOLDER ?>/client/request/category">Add Request</a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <ul class="navbar-nav flex-nowrap ms-auto">
+            <li class="nav-item dropdown no-arrow mx-1">
+                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="badge bg-danger badge-counter"></span><i class="fas fa-bell  fa-fw" style="color: rgb(255,255,255);"></i></a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in notifContainer">
+                        <h6 class="dropdown-header" style="background-color:var(--color-primary); border-color:var(--color-primary)">Notification</h6>
+                        <div id="notifContainer"></div>
+
+
+                    </div>
+                </div>
+                <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
+            </li>
+            <div class="d-none d-sm-block topbar-divider"></div>
+            <li class="nav-item dropdown no-arrow">
+                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span id="navBarName" class="d-none d-lg-inline me-2 small navbarName" style="color: #ffffff;"></span><img class="border rounded-circle img-profile" alt="Smiling Woman in Short Hair with a Beautiful Smile" src="<?php echo PARENT_FOLDER ?>/public/img/avatars/default.jpeg" width="32" height="32"></a>
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                        <a class="dropdown-item" href="<?php echo PARENT_FOLDER ?>/profile">
+                            <i class="fas fa-user fa-sm fa-fw me-2 "></i>&nbsp;Profile</a>
+                        <!-- <a class="dropdown-item" href="#">
+                            <i class="fas fa-cogs fa-sm fa-fw me-2 "></i>&nbsp;Settings</a>
+                        <a class="dropdown-item" href="#">
+                            <i class="fas fa-list fa-sm fa-fw me-2 "></i>&nbsp;Activity
+                            log</a> -->
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" id="logOutBtn" style="cursor: pointer;">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 "></i>&nbsp;Logout</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    const logOutBtn = document.querySelector("#logOutBtn")
+
+    logOutBtn && logOutBtn.addEventListener('click', logOut);
+
+    function logOut() {
+        Swal.fire({
+            title: "Do you want to Log Out?",
+            icon: 'question',
+            confirmButtonColor: "#0B790B",
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            confirmButtonColor: "#bd2d2d",
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: true,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                let timerInterval;
+                Swal.fire({
+                    icon: 'success',
+                    title: "Successfully logged-out!",
+                    html: '<p>Redirecting to log-in page...</p>',
+                    confirmButtonColor: "#0B790B",
+                    timer: 2000,
+                    timerProgressBar: true,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            timer.textContent = `${Swal.getTimerLeft()}`;
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        window.location.href = '<?php echo PARENT_FOLDER; ?>/logout';
+                    }
+                });
+            }
+        });
+    }
+
+    function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+    }
+
+    function getRequestTypeString(t_r_type) {
+        const typeMapping = {
+            'POSTING': 'Posting Approval',
+            'PHOTO': 'Request for Copies of Photo',
+            'PIO': 'PIO Service Request'
+        };
+        return typeMapping[t_r_type] || t_r_type; // Default to original if not found
+    }
+    const notifdataURL = document.querySelector("#notifdataURL").value
+
+    console.log(navBarName);
+    axios({
+        method: 'post',
+        url: notifdataURL,
+        data: {
+            'type': 'client'
+        },
+    }).then(response => {
+
+        console.log(response.data);
+        var responseData = response.data.request;
+        var notifContainer = document.querySelector("#notifContainer");
+        var navBarName = document.querySelector("#navBarName");
+        var badgeCounter = document.querySelector(".badge-counter");
+        var html = '';
+        var count = 0;
+
+        // Update the navbar name
+        navBarName.innerHTML = responseData[0]['user_fn'] + ' ' + responseData[0]['user_ln'];
+
+        responseData.forEach(function(data) {
+            if (data.t_viewedClient === 'Yes') {
+                return; // Skip viewed notifications
+            }
+            const requestTypeString = getRequestTypeString(data.t_r_type);
+
+            html += `
+            <a class="dropdown-item d-flex align-items-center" href="<?php echo PARENT_FOLDER ?>/admin/request/view?id=${data.t_r_id}&type=${data.t_r_type}">
+                <div class="dropdown-list-image me-3">
+                    <img class="rounded-circle" src="<?php echo PARENT_FOLDER ?>/public/img/dogs/image2.jpeg">
+                </div>
+                <div class="fw-bold">
+                    <div class="text-truncate" style="color: var(--color-primary);"><span>${requestTypeString} Request</span></div>
+                    <p  class="small text-gray-900 mb-0"><strong>${data.t_output_status}</strong></p>
+                    <p class="small text-gray-600 mb-0">DNSC PIO</span></p>
+                </div>
+            </a>
+        `;
+            count++;
+        });
+
+        notifContainer.innerHTML = html;
+        badgeCounter.innerHTML = count;
+    }).catch(error => {
+        console.error(error);
+    });
+</script>

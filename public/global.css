@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font-family-primary: 'Poppins', sans-serif;
+
+    /* Colors */
+    --color-primary: #084F08;
+    --color-secondary: #0B790B;
+    --color-white: rgb(255, 255, 255);
+    --color-grey: #F2F3F7;
+    --color-red: #bd2d2d;
+    --color-yellow: #cf8f10;
+    --color-blue: #276ff3;
+    --color-darkgrey: #26232c;
+}
+
+p,
+h2,
+h3,
+h4,
+h5 {
+    margin-bottom: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li::marker {
+    color: var(--color-primary);
+
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--font-family-primary);
+    background-color: var(--color-secondary);
+    font-size: 14px;
+}
+
+.main-container {
+    overflow: auto;
+    height: 100%;
+}
+
+.error-message {
+    background-color: var(--color-primary);
+    color: white;
+    width: 100%;
+}
+
+#content-wrapper {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+
+/* Table Status Design  */
+.status-btn-approved {
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 0px;
+}
+
+.status-btn-pending {
+    font-weight: bold;
+    color: var(--color-yellow);
+    margin-bottom: 0px;
+
+
+}
+
+.status-btn-declined {
+    font-weight: bold;
+    color: var(--color-red);
+    /* background-color: var(--color-red); */
+    border-radius: 1px;
+    margin-bottom: 0px;
+    border-radius: 1rem;
+}
+
+table.custom-table tbody tr td div .action {
+    border: 2px solid var(--color-primary);
+    font-weight: bold;
+    padding-left: 1rem;
+    padding-right: 1em;
+}
+
+/* Form Edit Toggle Design */
+
+
+/* Header  */
+h4[contenteditable="false"],
+.date-time h6,
+h4 input {
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+    font-weight: bold;
+    background-color: transparent;
+
+}
+
+.date-time input {
+    color: transparent;
+    height: 200px;
+}
+
+.date-time {
+    position: relative;
+}
+
+h4[contenteditable="true"],
+.date-time h6[contenteditable="true"] {
+    pointer-events: none;
+    border: 1px solid rgb(163, 163, 163);
+    padding: 1px 5px;
+    outline: none;
+    margin-bottom: 0;
+}
+
+
+#activity-Duration-viewpage {
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transform: translateY(50%);
+    padding: 10px;
+    border: none;
+    box-shadow: none;
+    z-index: 1000;
+    display: none;
+    color: transparent
+}
+
+
+/* Aditional Info  */
+ul[contenteditable="true"] {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    margin-left: 0;
+
+}
+
+.block1 {
+    transition: transform 0.3s ease;
+}
+
+.block1:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+ul[contenteditable="true"]:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 4px rgba(108, 117, 125, 0.5);
+}
+
+ul[contenteditable="false"] li {
+    list-style: disc;
+}
+
+ul li input,
+.titleEditable input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+ul[contenteditable="false"] li input,
+.titleEditable[contenteditable="false"] input {
+    pointer-events: none;
+}
+
+
+ul[contenteditable="true"] li input,
+.titleEditable[contenteditable="true"] input {
+    pointer-events: fill;
+    padding: 10px;
+}
+
+
+.remove-file {
+    background-color: red;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    color: white;
+    border: none;
+    margin-right: 10px;
+}
+
+
+.bi-list-ul::before {
+    top: 10px;
+}
+
+.title-page {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+}
+
+.calendar {
+    display: flex;
+    flex-flow: column;
+
+}
+
+.calendar .header .month-year {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 10px 0;
+}
+
+.calendar .days {
+    display: flex;
+    flex-flow: wrap;
+
+}
+
+.calendar .days .day_name {
+    width: calc(100% / 7);
+    border-right: 1px solid var(--color-secondary);
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: #818589;
+    color: #fff;
+    background-color: var(--color-primary);
+
+}
+
+.calendar .days .day_name:nth-child(7) {
+    border: none;
+}
+
+.calendar .days .day_num {
+    display: flex;
+    flex-flow: column;
+    width: calc(100% / 7);
+    border-right: 1px solid #e6e9ea;
+    border-bottom: 1px solid #e6e9ea;
+    padding: 15px;
+    font-weight: bold;
+    color: var(--color-pr);
+    cursor: pointer;
+    min-height: 100px;
+}
+
+.calendar .days .day_num span {
+    display: inline-flex;
+    width: 30px;
+    font-size: 14px;
+}
+
+.calendar .days .day_num .event {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    /* background-color: #f7c30d; */
+    color: rgb(104, 104, 104);
+    word-wrap: break-word;
+    border: 1.5px solid rgb(119, 170, 60);
+}
+
+.calendar .days .day_num .event .numOfEvent{
+    color: rgb(29, 29, 29);
+    font-size: 15px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+.calendar .days .day_num .event.green {
+    background-color: #51ce57;
+}
+
+.calendar .days .day_num .event.blue {
+    background-color: #518fce;
+}
+
+.calendar .days .day_num .event.red {
+    background-color: #ce5151;
+}
+
+.calendar .days .day_num:nth-child(7n+1) {
+    border-left: 1px solid #e6e9ea;
+}
+
+.calendar .days .day_num:hover {
+    background-color: #fdfdfd;
+}
+
+.calendar .days .day_num.ignore {
+    background-color: #fdfdfd;
+    color: #ced2d4;
+    cursor: inherit;
+}
+
+.calendar .days .day_num.selected {
+    background-color: #f1f2f3;
+    cursor: inherit;
+}
+
+.form-control:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25)
+}
+
+.sidebar .nav-item .nav-link.active {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.page-link {
+    color: var(--color-primary);
+}
+
+.page-link:hover {
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+}
+
+.page-link:active {
+    color: var(--color-primary);
+    background-color: var(--color-primary);
+}
+
+.page-item.active .page-link {
+    color: var(--color-white);
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+}
+
+
+/* Chat box  */
+.chat-box {
+    min-height: 50px;
+    max-height: 200px;
+    overflow: auto;
+    padding: 10px 20px;
+}
+
+.chat-box .response {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+
+}
+
+.chat-box .response p {
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 70px;
+}
+
+.chat-box .response div {
+    width: 100%;
+    margin-top: 2px;
+    border-bottom: 1px solid black;
+}
+
+.file-list div {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.notifContainer {
+    max-height: 400px;
+    min-width: 300px;
+    overflow-y: scroll;
+}
